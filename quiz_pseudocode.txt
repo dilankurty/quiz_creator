@@ -15,7 +15,7 @@ Loop
                 Ask the user shuffled questions
                 Check if their amswer was correct or not
                 After all the questions was answered, Exit
-            If does not exixsts:
+            If does not exists:
                 Display "No quiz exists
                 Ask if they want to generate or exit
     If user selects 3:
