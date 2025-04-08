@@ -8,7 +8,8 @@ Loop
         Ask user for the correct answer
         Write the questions, choices, and answer to a q&a.txt file
         Repeat until user wants to exit
-    If user selects 2 (Take a quiz):
+    
+    [ If user selects 2 (Take a quiz):
         Check if a text file (q&a.txt) exists
             If exists:
                 Load the questions from the text file
@@ -17,7 +18,8 @@ Loop
                 After all the questions was answered, Exit
             If does not exists:
                 Display "No quiz exists
-                Ask if they want to generate or exit
+                Ask if they want to generate or exit ] (for next assignment)
+                
     If user selects 3:
         End
 End
