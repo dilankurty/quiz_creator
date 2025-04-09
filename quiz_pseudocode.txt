@@ -7,7 +7,7 @@ Loop
         Ask user to input a question
         Ask user for 4 multiple choices (a, b, c, d)
         Ask user for the correct answer
-        Write the questions, choices, and answer to a q&a.txt file
+        Write the questions, choices, and answer to a (subject)_quiz.txt file
         Repeat until user wants to exit
     
     [ If user selects 2 (Take a quiz):
