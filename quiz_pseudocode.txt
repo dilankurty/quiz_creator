@@ -3,6 +3,7 @@ Loop
     Display menu: 1.) Generate a quiz, 2.) Take a quiz, 3.) Exit
     Ask user to select from the menu (1 - 3)
     If user selects 1 (Generate a quiz):
+        Ask user what subject they want to create a quiz
         Ask user to input a question
         Ask user for 4 multiple choices (a, b, c, d)
         Ask user for the correct answer
