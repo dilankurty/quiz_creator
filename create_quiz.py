@@ -33,36 +33,44 @@ def create_quiz():
         except (ValueError, IndexError):
             print("Invalid input! Please choose a valid subject number.")
     
-        file = f"{select_subject}_quiz.txt"
+    file = f"{select_subject}_quiz.txt"
 
-        print(f"\nCreating a quiz for {select_subject}...")
-        while True:
-            # Input question and choices
-            question = input("Enter the question: ")
-            letters = ['A', 'B', 'C', 'D']
-            with open(file, "a") as f:
-                f.write(f"Question: {question}\n")
-
-                for letter in letters:
-                    choices = input(f"{letter}: ")
-                    f.write(f"{letter}: {choices}\n")
+    print(f"\nCreating a quiz for {select_subject}...")
+    while True:
+        # Input question and choices
+        question = input("Enter the question: ")
+        letters = ['A', 'B', 'C', 'D']
         
-                while True:
-                    # Input correct answer
-                    answer = input("Enter the correct answer: ").upper()
-                    if answer in letters:
-                        f.write(f"Correct Answer: {answer}\n\n")
-                        break
-                    else:
-                        print("Invalid input! Please enter A, B, C, or D.")
+        with open(file, "a") as f:
+            f.write(f"Question: {question}\n")
+            for letter in letters:
+                choices = input(f"{letter}: ")
+                f.write(f"{letter}: {choices}\n")
+        
+            while True:
+                # Input correct answer
+                answer = input("Enter the correct answer: ").upper()
+                if answer in letters:
+                    f.write(f"Correct Answer: {answer}\n")
+                    f.write("—————\n")
+                    break
+                else:
+                    print("Invalid input! Please enter A, B, C, or D.")
 
-            print(f"Question for {select_subject} created successfully!")
+        print(f"Question for {select_subject} created successfully!")
 
-            cont = input("Do you want to add another question? (y/n): ").lower()
-            if cont == 'y':
-                continue
-            elif cont == 'n':
+        # Ask if the user wants to continue, go back to the menu, or select another category
+        while True:    
+            cont = input("\nDo you want to: \n[1] Add another question \n[2] Go back to the menu \n[3] Select another category\nEnter your choice: ")
+            if cont == '1':
+                continue  # Add another question
+            elif cont == '2':
+                menu()  # Go back to main menu
                 break
+            elif cont == '3':
+                create_quiz()  # Select another category
+                break
+            else:
+                print("Invalid choice! Returning to question input.")
         
-
 menu()
