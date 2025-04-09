@@ -24,6 +24,7 @@ def create_quiz():
     for index, subject in enumerate(subjects, 1):
         print(f"{index}. {subject}")
 
+    # subject selection
     while True:
         try:
             choice = int(input("Enter subject number: "))
@@ -35,24 +36,37 @@ def create_quiz():
         file = f"{select_subject}_quiz.txt"
 
         print(f"\nCreating a quiz for {select_subject}...")
-        question = input("Enter the question: ")
 
-        with open(file, "a") as f:
-            f.write(f"Question: {question}\n")
-
-        letters = ['A', 'B', 'C', 'D']
-        for letter in letters:
-            choices = input(f"{letter}: ")
-            with open(file, "a") as f:
-                f.write(f"{letter}: {choices}\n")
-        
         while True:
-            answer = input("Enter the correct answer: ").upper()
-            if answer in letters:
+            # Input question and choices
+            question = input("Enter the question: ")
+
+            with open(file, "a") as f:
+                f.write(f"Question: {question}\n")
+
+            letters = ['A', 'B', 'C', 'D']
+            for letter in letters:
+                choices = input(f"{letter}: ")
                 with open(file, "a") as f:
-                    f.write(f"Correct Answer: {answer}\n")
-                break
-            else:
-                print("Invalid input! Please enter A, B, C, or D.")
+                    f.write(f"{letter}: {choices}\n")
         
+            while True:
+                # Input correct answer
+                answer = input("Enter the correct answer: ").upper()
+                if answer in letters:
+                    with open(file, "a") as f:
+                        f.write(f"Correct Answer: {answer}\n")
+                    break
+                else:
+                    print("Invalid input! Please enter A, B, C, or D.")
+
+            print(f"Question for {select_subject} created successfully!")
+
+            cont = input("Do you want to add another question? (y/n): ").lower()
+            if cont != 'y':
+                pass
+            elif cont == 'n':
+                break
+        
+
 menu()
