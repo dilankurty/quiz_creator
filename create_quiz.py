@@ -12,6 +12,7 @@ def menu():
         elif choice == "2":
             print("Coming soon...")
         elif choice == "3":
+            print("Thank you for using Quizard! See you next time!")
             exit()
         else:
             print("Invalid input! Please choose between 1 - 3.")
