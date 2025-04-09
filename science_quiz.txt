@@ -1,0 +1,14 @@
+Question: Study of living things
+A: Geology
+B: Biology
+C: Meteorology
+D: Astronomy
+Correct Answer: B
+----------
+Question: Study of Earth, rocks, etc.
+A: Biology
+B: Meteorology
+C: Astronomy
+D: Geology
+Correct Answer: D
+----------
