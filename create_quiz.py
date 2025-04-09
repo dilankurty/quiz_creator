@@ -34,10 +34,10 @@ def create_quiz():
             except (ValueError, IndexError):
                 print("Invalid input! Please choose a valid subject number.")
 
-        file = f"{select_subject}_quiz.txt"
+        file = f"{select_subject.lower()}_quiz.txt"
 
         print(f"\nCreating a quiz for {select_subject}...")
-        
+
         while True:
             # Input question and choices
             question = input("Enter the question: ")
