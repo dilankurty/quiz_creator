@@ -40,10 +40,15 @@ def create_quiz():
     with open(file, "a") as f:
         f.write(f"Question: {question}\n")
 
-    choices = ['A', 'B', 'C', 'D']
-    for letter in choices:
-        answer = input(f"{letter}: ")
+    letters = ['A', 'B', 'C', 'D']
+    for letter in letters:
+        choices = input(f"{letter}: ")
         with open(file, "a") as f:
-            f.write(f"{letter}: {answer}\n")
-            
+            f.write(f"{letter}: {choices}\n")
+
+    answer = input("Enter the correct answer: ").upper()
+    if answer in letters:
+        with open(file, "a") as f:
+            f.write(f"Correct Answer: {answer}\n")
+        
 menu()
