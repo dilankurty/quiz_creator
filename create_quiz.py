@@ -1,7 +1,7 @@
 # main menu system
 def menu():
     while True:
-        print("welcome to Quizard!")
+        print("\nWelcome to Quizard!")
         print("[1] Create a quiz")
         print("[2] Take a quiz")
         print("[3] Exit")
@@ -18,6 +18,10 @@ def menu():
 
 # create a quiz system
 def create_quiz():
-    print("Create a quiz")
+    subjects = ["Science", "Math", "History", "Values", "General Knowledge"]
+
+    print("Choose a subject for the quiz:")
+    for index, subject in enumerate(subjects, 1):
+        print(f"{index}. {subject}")
 
 menu()
