@@ -24,7 +24,12 @@ def create_quiz():
     for index, subject in enumerate(subjects, 1):
         print(f"{index}. {subject}")
 
-    choice = int(input("Enter subject number: "))
-    select_subject = subjects[choice - 1]
+    while True:
+        try:
+            choice = int(input("Enter subject number: "))
+            select_subject = subjects[choice - 1]
+
+        except (ValueError, IndexError):
+            print("Invalid input! Please choose a valid subject number.")
     
 menu()
