@@ -32,23 +32,27 @@ def create_quiz():
         except (ValueError, IndexError):
             print("Invalid input! Please choose a valid subject number.")
     
-    file = f"{select_subject}_quiz.txt"
+        file = f"{select_subject}_quiz.txt"
 
-    print(f"\nCreating a quiz for {select_subject}...")
-    question = input("Enter the question: ")
+        print(f"\nCreating a quiz for {select_subject}...")
+        question = input("Enter the question: ")
 
-    with open(file, "a") as f:
-        f.write(f"Question: {question}\n")
-
-    letters = ['A', 'B', 'C', 'D']
-    for letter in letters:
-        choices = input(f"{letter}: ")
         with open(file, "a") as f:
-            f.write(f"{letter}: {choices}\n")
+            f.write(f"Question: {question}\n")
 
-    answer = input("Enter the correct answer: ").upper()
-    if answer in letters:
-        with open(file, "a") as f:
-            f.write(f"Correct Answer: {answer}\n")
+        letters = ['A', 'B', 'C', 'D']
+        for letter in letters:
+            choices = input(f"{letter}: ")
+            with open(file, "a") as f:
+                f.write(f"{letter}: {choices}\n")
+        
+        while True:
+            answer = input("Enter the correct answer: ").upper()
+            if answer in letters:
+                with open(file, "a") as f:
+                    f.write(f"Correct Answer: {answer}\n")
+                break
+            else:
+                print("Invalid input! Please enter A, B, C, or D.")
         
 menu()
