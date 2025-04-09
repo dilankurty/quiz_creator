@@ -24,4 +24,7 @@ def create_quiz():
     for index, subject in enumerate(subjects, 1):
         print(f"{index}. {subject}")
 
+    choice = int(input("Enter subject number: "))
+    select_subject = subjects[choice - 1]
+    
 menu()
