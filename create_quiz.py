@@ -18,3 +18,6 @@ def menu():
 
 # create a quiz system
 def create_quiz():
+    print("Create a quiz")
+
+menu()
