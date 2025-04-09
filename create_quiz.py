@@ -29,42 +29,38 @@ def create_quiz():
         try:
             choice = int(input("Enter subject number: "))
             select_subject = subjects[choice - 1]
-
+            break
         except (ValueError, IndexError):
             print("Invalid input! Please choose a valid subject number.")
     
         file = f"{select_subject}_quiz.txt"
 
         print(f"\nCreating a quiz for {select_subject}...")
-
         while True:
             # Input question and choices
             question = input("Enter the question: ")
-
+            letters = ['A', 'B', 'C', 'D']
             with open(file, "a") as f:
                 f.write(f"Question: {question}\n")
 
-            letters = ['A', 'B', 'C', 'D']
-            for letter in letters:
-                choices = input(f"{letter}: ")
-                with open(file, "a") as f:
+                for letter in letters:
+                    choices = input(f"{letter}: ")
                     f.write(f"{letter}: {choices}\n")
         
-            while True:
-                # Input correct answer
-                answer = input("Enter the correct answer: ").upper()
-                if answer in letters:
-                    with open(file, "a") as f:
-                        f.write(f"Correct Answer: {answer}\n")
-                    break
-                else:
-                    print("Invalid input! Please enter A, B, C, or D.")
+                while True:
+                    # Input correct answer
+                    answer = input("Enter the correct answer: ").upper()
+                    if answer in letters:
+                        f.write(f"Correct Answer: {answer}\n\n")
+                        break
+                    else:
+                        print("Invalid input! Please enter A, B, C, or D.")
 
             print(f"Question for {select_subject} created successfully!")
 
             cont = input("Do you want to add another question? (y/n): ").lower()
-            if cont != 'y':
-                pass
+            if cont == 'y':
+                continue
             elif cont == 'n':
                 break
         
