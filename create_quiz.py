@@ -52,7 +52,7 @@ def create_quiz():
                 answer = input("Enter the correct answer: ").upper()
                 if answer in letters:
                     f.write(f"Correct Answer: {answer}\n")
-                    f.write("—————\n")
+                    f.write("----------\n")
                     break
                 else:
                     print("Invalid input! Please enter A, B, C, or D.")
@@ -63,13 +63,11 @@ def create_quiz():
         while True:    
             cont = input("\nDo you want to: \n[1] Add another question \n[2] Go back to the menu \n[3] Select another category\nEnter your choice: ")
             if cont == '1':
-                continue  # Add another question
+                break  # Add another question
             elif cont == '2':
-                menu()  # Go back to main menu
-                break
+                return
             elif cont == '3':
-                create_quiz()  # Select another category
-                break
+                return create_quiz()  # Select another category
             else:
                 print("Invalid choice! Returning to question input.")
         
