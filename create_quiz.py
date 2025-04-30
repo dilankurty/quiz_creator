@@ -97,4 +97,13 @@ def create_quiz():
             if cont == '3':
                 break  # Break out of the outer loop to re-select category
         
+# take a quiz system
+def take_quiz():
+    # list of available quizzes
+    quiz_files = [file for file in os.listdir() if file.endswith("_quiz.json")]
+    if not quiz_files:
+        print("No quizzes available. Please create one first.")
+        return
+    
+    
 menu()
