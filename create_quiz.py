@@ -128,5 +128,28 @@ def take_quiz():
     
     random.shuffle(questions)
 
+    # start the quiz
+    print(f"\nStarting the {subject.title()} quiz...\n")
+    score = 0
+    total = len(questions)
 
+    for index, question in enumerate(questions, 1):
+        print(f"\nQ{index}: {question['question']}")
+        for key, value in question['choices'].items():
+            print(f"{key}: {value}")
+
+    while True:
+        answer = input("Enter your answer (A, B, C, or D): ").upper()
+        if answer in ['A', 'B', 'C', 'D']:
+            break
+        else:
+            print("Invalid input! Please enter A, B, C, or D.")
+
+    if answer == question['answer']:
+        print("Correct!")
+        score += 1
+    else:
+        correct_answer = question['choices'][question['answer']]
+        print(f"Wrong! The correct answer is {question['answer']}: {correct_answer}")
+        
 menu()
