@@ -151,5 +151,30 @@ def take_quiz():
     else:
         correct_answer = question['choices'][question['answer']]
         print(f"Wrong! The correct answer is {question['answer']}: {correct_answer}")
-        
+
+    # display the score
+    print(f"\nYou got {score}/{total} correct. Your score: {round(score/total*100, 2)}%")
+
+    # ask user for their name and save the score to the leaderboard
+    name = input("Enter your name for the leaderboard: ").strip()
+    leaderboard_file = "leaderboard.json"
+
+    if os.path.exists(leaderboard_file):
+        with open(leaderboard_file, "r") as f:
+            leaderboards = json.load(f)
+
+    else:
+        leaderboards = {}
+
+    if subject not in leaderboards:
+        leaderboards[subject] = []
+
+    leaderboards[subject].append({"name": name, "score": score, "total": total})
+    # arrange the leaderboard in ascending order
+    leaderboards[subject].sort(key=lambda x: x['score'], reverse=True)
+    
+    with open(leaderboard_file, "w") as f:
+        json.dump(leaderboards, f, indent=4)
+
+
 menu()
