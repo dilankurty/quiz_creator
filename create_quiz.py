@@ -1,6 +1,14 @@
 import os
 import json
 import random
+import platform
+
+# clear the console screen based on the OS
+def clear_screen():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 # main menu system
 def menu():
