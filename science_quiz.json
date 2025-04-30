@@ -18,5 +18,25 @@
             "D": "meteorolog"
         },
         "answer": "B"
+    },
+    {
+        "question": "study of living things",
+        "choices": {
+            "A": "biology",
+            "B": "geology",
+            "C": "physics",
+            "D": "astronomy"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "study of rocks",
+        "choices": {
+            "A": "biology",
+            "B": "geology",
+            "C": "physics",
+            "D": "astronomy"
+        },
+        "answer": "B"
     }
 ]
