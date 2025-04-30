@@ -56,24 +56,31 @@ def create_quiz():
             # Input question and choices
             question = input("Enter the question: ")
             letters = ['A', 'B', 'C', 'D']
+            choices = {}
 
-            with open(file, "a") as f:
-                f.write(f"Question: {question}\n")
-                for letter in letters:
-                    choices = input(f"{letter}: ")
-                    f.write(f"{letter}: {choices}\n")
+            for letter in letters:
+                choices[letter] = input(f"Enter choice {letter}: ")
 
-                while True:
-                    # Input correct answer
-                    answer = input("Enter the correct answer (A, B, C, or D): ").upper()
-                    if answer in letters:
-                        f.write(f"Correct Answer: {answer}\n")
-                        f.write("----------\n")
-                        break
-                    else:
-                        print("Invalid input! Please enter A, B, C, or D.")
+            while True:
+                # Input correct answer
+                answer = input("Enter the correct answer (A, B, C, or D): ").upper()
+                if answer in letters:
+                    break
+                else:
+                    print("Invalid input! Please enter A, B, C, or D.")
 
-            print(f"Question for {select_subject} created successfully!")
+            new_question = {
+                "question": question,
+                "choices": choices,
+                "answer": answer
+            }
+
+            quiz_data.append(new_question)
+
+            with open(file, "w") as f:
+                json.dump(quiz_data, f, indent=4)
+
+            print(f"Question for {select_subject} created successfully to {file}!")
 
             # Ask if the user wants to continue, go back to the menu, or select another category
             while True:
