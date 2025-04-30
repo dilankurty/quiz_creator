@@ -189,7 +189,7 @@ def take_quiz():
 
     # show the top 5 for the specific subject
     print(f"\n🏆 {subject.title()} Quiz Leaderboard:")
-    for index, entry in enumerate(all_leaderboards[subject][:5], 1):
+    for index, entry in enumerate(leaderboards[subject][:5], 1):
         print(f"{index}. {entry['name']} - {entry['score']}/{entry['total']}")
 
     print("\nThank you for taking the quiz!")
