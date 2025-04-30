@@ -105,5 +105,10 @@ def take_quiz():
         print("No quizzes available. Please create one first.")
         return
     
-    
+    print("\nAvailable quizzes:")
+    for indx, file in enumerate(quiz_files, 1):
+        subject = file.replace("_quiz.json", "")
+        print(f"[{indx}] {subject.title()}")
+
+        
 menu()
