@@ -1,0 +1,22 @@
+[
+    {
+        "question": "study of living things",
+        "choices": {
+            "A": "biology",
+            "B": "geology",
+            "C": "physics",
+            "D": "meteorology"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "study of rocks",
+        "choices": {
+            "A": "astronomy",
+            "B": "geology",
+            "C": "physics",
+            "D": "meteorolog"
+        },
+        "answer": "B"
+    }
+]
