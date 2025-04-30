@@ -176,5 +176,12 @@ def take_quiz():
     with open(leaderboard_file, "w") as f:
         json.dump(leaderboards, f, indent=4)
 
+    # show the top 5 for the specific subject
+    print(f"\n🏆 {subject.title()} Quiz Leaderboard:")
+    for index, entry in enumerate(all_leaderboards[subject][:5], 1):
+        print(f"{index}. {entry['name']} - {entry['score']}/{entry['total']}")
+
+    print("\nThank you for taking the quiz!")
+    input("\nPress Enter to return to menu...")
 
 menu()
