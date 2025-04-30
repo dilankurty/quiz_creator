@@ -39,7 +39,16 @@ def create_quiz():
             except (ValueError, IndexError):
                 print("Invalid input! Please choose a valid subject number.")
 
-        file = f"{select_subject.lower()}_quiz.txt"
+        file = f"{select_subject.lower()}_quiz.json"
+
+        # Check if the file exists, if not create it
+        if os.path.exists(file):
+            with open(file, "r") as f:
+                quiz_data = json.load(f)
+
+        else:
+            quiz_data = []
+                
 
         print(f"\nCreating a quiz for {select_subject}...")
 
