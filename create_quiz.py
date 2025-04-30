@@ -22,7 +22,7 @@ def menu():
         if choice == "1":
             create_quiz()
         elif choice == "2":
-            print("Coming soon...")
+            take_quiz()
         elif choice == "3":
             print("Thank you for using Quizard! See you next time!")
             exit()
