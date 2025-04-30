@@ -119,5 +119,14 @@ def take_quiz():
         except (ValueError, IndexError):
             print("Invalid input! Please choose a valid quiz number.")
 
+    # Load the shuffled questions from the selected quiz file
+    with open(quiz_file, "r") as f:
+        questions = json.load(f)
+    if not questions:
+        print("No questions available in this quiz.")
+        return
+    
+    random.shuffle(questions)
+
 
 menu()
