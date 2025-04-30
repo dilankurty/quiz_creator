@@ -1,3 +1,7 @@
+import os
+import json
+import random
+
 # main menu system
 def menu():
     while True:
