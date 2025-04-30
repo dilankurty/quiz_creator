@@ -106,9 +106,18 @@ def take_quiz():
         return
     
     print("\nAvailable quizzes:")
-    for indx, file in enumerate(quiz_files, 1):
+    for index, file in enumerate(quiz_files, 1):
         subject = file.replace("_quiz.json", "")
-        print(f"[{indx}] {subject.title()}")
+        print(f"[{index}] {subject.title()}")
 
-        
+    while True:
+        try:
+            choice = int(input("Select a quiz by number: "))
+            quiz_file = quiz_files[choice - 1]
+            subject = quiz_file.replace("_quiz.json", "").title()
+            break
+        except (ValueError, IndexError):
+            print("Invalid input! Please choose a valid quiz number.")
+
+
 menu()
