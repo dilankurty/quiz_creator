@@ -7,19 +7,20 @@ Loop
         Ask user to input a question
         Ask user for 4 multiple choices (a, b, c, d)
         Ask user for the correct answer
-        Write the questions, choices, and answer to a (subject)_quiz.txt file
+        Write the questions, choices, and answer to a (subject)_quiz.json file
         Repeat until user wants to exit
     
-    [ If user selects 2 (Take a quiz):
-        Check if a text file (q&a.txt) exists
+    If user selects 2 (Take a quiz):
+        Check if a json file for the specific subject exists
             If exists:
-                Load the questions from the text file
+                Load the questions from the json file
                 Ask the user shuffled questions
                 Check if their amswer was correct or not
-                After all the questions was answered, Exit
+                After all the questions was answered, check the score
+                Ask the user for their name to save to the leaderboard
             If does not exists:
-                Display "No quiz exists
-                Ask if they want to generate or exit ] (for next assignment)
+                Display "No quiz exists"
+                Ask if they want to generate or exit
                 
     If user selects 3:
         End
