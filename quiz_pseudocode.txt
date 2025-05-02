@@ -20,7 +20,7 @@ Loop
                 Ask the user for their name to save to the leaderboard
             If does not exists:
                 Display "No quiz exists"
-                Ask if they want to generate or exit
+                Go back to main menu
                 
     If user selects 3:
         End
